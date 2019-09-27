@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wugj.comp1" >
+
+
+    <application android:theme="@style/AppTheme">
+
+        <activity android:name=".Component1Activity"/>
+    </application>
+</manifest>
