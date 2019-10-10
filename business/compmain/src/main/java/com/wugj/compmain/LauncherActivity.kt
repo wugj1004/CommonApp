@@ -37,11 +37,14 @@ class LauncherActivity :BaseActivity(){
     }
 
     public fun jump(view: View){
-        System.out.println("调用comp1中的服务：${(ARouter.getInstance().build("/comp1/hello").navigation() as MyProvider).sayHello("mike")}")
+//        byName获取服务
+//        System.out.println("调用comp1中的服务：${(ARouter.getInstance().build("/comp1/hello").navigation() as MyProvider).sayHello("mike")}")
 
-        ARouter.getInstance().navigation(MyProvider::class.java).sayHello("mike")
+//        byType获取服务
+//        ARouter.getInstance().navigation(MyProvider::class.java).sayHello("mike")
 
-        myProvider!!.sayHello("mike")
+//        依赖注入获取服务
+//        myProvider!!.sayHello("mike")
 
         //单一跳转降级处理
 //        ARouter.getInstance().build("/comp1/main")
@@ -57,9 +60,11 @@ class LauncherActivity :BaseActivity(){
 //            }
 //        })
 
+//        通过Uri调用组件
         val uri = Uri.parse("comp1://com.wugj.comp1:8888/comp1/main?key=value")
         ARouter.getInstance().build(uri).navigation()
 
+//        显示Activity调用组件
 //        startActivity(Intent(this,EventBusActivity::class.java))
 
 
