@@ -12,7 +12,5 @@ import com.alibaba.android.arouter.facade.template.IProvider
  * version:
  */
 interface MyProvider :IProvider{
-
-
     fun sayHello(name:String):String
 }

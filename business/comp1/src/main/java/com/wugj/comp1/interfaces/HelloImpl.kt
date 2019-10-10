@@ -16,13 +16,10 @@ import com.wugj.common.interfaces.MyProvider
 
 @Route(path = "/comp1/hello", name = "测试服务")
 class HelloImpl : MyProvider {
-
     override fun init(context: Context?) {
     }
 
     override fun sayHello(name: String):String {
-
         return StringBuffer(name).append("名字修改了").toString()
     }
-
 }

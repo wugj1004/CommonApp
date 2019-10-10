@@ -4,6 +4,14 @@
 
     <application android:theme="@style/AppTheme">
 
-        <activity android:name=".Component1Activity"/>
+        <activity android:name=".Component1Activity">
+            <intent-filter>
+                <category android:name="android.intent.category.DEFAULT"/>
+                <data android:host="com.wugj.comp1"
+                    android:path="/comp1/main"
+                    android:port="8888"
+                    android:scheme="comp1"/>
+            </intent-filter>
+        </activity>
     </application>
 </manifest>
