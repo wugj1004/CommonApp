@@ -39,8 +39,6 @@ class LauncherActivity :BaseActivity(){
 
     public fun jump(view: View){
 
-        //依赖注入是必须先声明
-        ARouter.getInstance().inject(this)
 //        byName获取服务
 //        System.out.println("调用comp1中的服务：${(ARouter.getInstance().build("/comp1/hello").navigation() as MyProvider).sayHello("mike")}")
 
