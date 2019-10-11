@@ -33,10 +33,14 @@ class LauncherActivity :BaseActivity(){
 
         setContentView(R.layout.main_activity_main)
 
+
         test()
     }
 
     public fun jump(view: View){
+
+        //依赖注入是必须先声明
+        ARouter.getInstance().inject(this)
 //        byName获取服务
 //        System.out.println("调用comp1中的服务：${(ARouter.getInstance().build("/comp1/hello").navigation() as MyProvider).sayHello("mike")}")
 
@@ -47,22 +51,22 @@ class LauncherActivity :BaseActivity(){
 //        myProvider!!.sayHello("mike")
 
         //单一跳转降级处理
-//        ARouter.getInstance().build("/comp1/main")
-//                .withString("key","value")
-//                .navigation(this,object:NavigationCallback{
-//            override fun onLost(postcard: Postcard?) {
-//            }
-//            override fun onFound(postcard: Postcard?) {
-//            }
-//            override fun onInterrupt(postcard: Postcard?) {
-//            }
-//            override fun onArrival(postcard: Postcard?) {
-//            }
-//        })
+        ARouter.getInstance().build("/comp1/main")
+                .withString("key","value")
+                .navigation(this,object:NavigationCallback{
+            override fun onLost(postcard: Postcard?) {
+            }
+            override fun onFound(postcard: Postcard?) {
+            }
+            override fun onInterrupt(postcard: Postcard?) {
+            }
+            override fun onArrival(postcard: Postcard?) {
+            }
+        })
 
 //        通过Uri调用组件
-        val uri = Uri.parse("comp1://com.wugj.comp1:8888/comp1/main?key=value")
-        ARouter.getInstance().build(uri).navigation()
+//        val uri = Uri.parse("comp1://com.wugj.comp1:8888/comp1/main?key=value")
+//        ARouter.getInstance().build(uri).navigation()
 
 //        显示Activity调用组件
 //        startActivity(Intent(this,EventBusActivity::class.java))
