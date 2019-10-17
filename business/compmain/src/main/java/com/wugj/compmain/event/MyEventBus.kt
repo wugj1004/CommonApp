@@ -1,4 +1,4 @@
-package com.wugj.compmain.eventbus1
+package com.wugj.compmain.event
 
 /**
  * description:
@@ -10,7 +10,7 @@ package com.wugj.compmain.eventbus1
  * version:
  */
 
-class MyEventBus(msg:String){
+class MyEventBus(msg:String) :BaseEvent(){
     var messagge:String
 
     init {

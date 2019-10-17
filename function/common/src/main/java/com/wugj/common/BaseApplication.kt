@@ -1,18 +1,12 @@
 package com.wugj.common
 
 import android.app.Application
-import android.widget.Toast
 import com.alibaba.android.arouter.launcher.ARouter
 import io.reactivex.Observable
 import io.reactivex.ObservableEmitter
 import io.reactivex.ObservableOnSubscribe
 import io.reactivex.Observer
-import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
-import io.reactivex.schedulers.Schedulers
-import org.reactivestreams.Subscriber
-import org.reactivestreams.Subscription
-import java.util.*
 
 /**
  * description:
