@@ -20,6 +20,7 @@
         </activity>
 
         <activity android:name=".EventBusActivity"/>
+        <activity android:name=".RecycleActivity"/>
     </application>
 
 </manifest>

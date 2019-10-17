@@ -17,4 +17,18 @@
          android:layout_width="match_parent"
          android:layout_height="wrap_content"
          android:text="Button" />
+
+     <Button
+         android:clickable="true"
+         android:onClick="jumpEventBus"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="jumpEventBus" />
+
+     <Button
+         android:clickable="true"
+         android:onClick="jumpRecycle"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="jumpRecycle" />
 </LinearLayout>

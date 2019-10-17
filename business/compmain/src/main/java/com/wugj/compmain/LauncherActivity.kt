@@ -3,7 +3,10 @@ package com.wugj.compmain
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
+import com.alibaba.android.arouter.facade.Postcard
 import com.alibaba.android.arouter.facade.annotation.Autowired
+import com.alibaba.android.arouter.facade.callback.NavigationCallback
+import com.alibaba.android.arouter.launcher.ARouter
 import com.wugj.common.BaseActivity
 import com.wugj.common.interfaces.MyProvider
 import com.wugj.compmain.event.MyEventBus
@@ -29,8 +32,6 @@ class LauncherActivity :BaseActivity(){
 
         setContentView(R.layout.main_activity_main)
 
-
-        test()
     }
 
     public fun jump(view: View){
@@ -45,34 +46,37 @@ class LauncherActivity :BaseActivity(){
 //        myProvider!!.sayHello("mike")
 
         //单一跳转降级处理
-//        ARouter.getInstance().build("/comp1/main")
-//                .withString("key","value")
-//                .navigation(this,object:NavigationCallback{
-//            override fun onLost(postcard: Postcard?) {
-//            }
-//            override fun onFound(postcard: Postcard?) {
-//            }
-//            override fun onInterrupt(postcard: Postcard?) {
-//            }
-//            override fun onArrival(postcard: Postcard?) {
-//            }
-//        })
+        ARouter.getInstance().build("/comp1/main")
+                .withString("key","value")
+                .navigation(this,object: NavigationCallback {
+            override fun onLost(postcard: Postcard?) {
+            }
+            override fun onFound(postcard: Postcard?) {
+            }
+            override fun onInterrupt(postcard: Postcard?) {
+            }
+            override fun onArrival(postcard: Postcard?) {
+            }
+        })
 
 //        通过Uri调用组件
 //        val uri = Uri.parse("comp1://com.wugj.comp1:8888/comp1/main?key=value")
 //        ARouter.getInstance().build(uri).navigation()
-
-//        显示Activity调用组件
-        startActivity(Intent(this,EventBusActivity::class.java))
 
 
         //通过路径跳转
 //        startActivity(Intent().setClass(this, Class.forName("com.wugj.comp1.Component1Activity")))
     }
 
-    fun test(){
+    fun jumpEventBus(view:View){
+        //显示Activity调用组件
+        startActivity(Intent(this,EventBusActivity::class.java))
 
-        MyEventBus("123").showLog()
+    }
+
+
+    fun jumpRecycle(view:View){
+        startActivity(Intent(this,EventBusActivity::class.java))
 
     }
 }
